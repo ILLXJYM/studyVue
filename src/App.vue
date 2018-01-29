@@ -35,7 +35,10 @@
         item.isFinished = !item.isFinished
       },
       addNew: function () {
-        console.log(this.newItem)
+          this.items.push({
+            label: this.newItem,
+            isFinished: true
+          })
         this.newItem = ''
       }
     }
