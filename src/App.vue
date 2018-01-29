@@ -13,32 +13,32 @@
 
 <script>
   export default{
-      data: function () {
-        return {
-            title: 'this is a todo list',
-            items: [
-              {
-                  label: 'coding',
-                  isFinished: true
-              },
-              {
-                  label: 'walking',
-                  isFinished: true
-              }
-
-            ],
-            liClass: 'thisIsLiClass'
-        }
-      },
-        methods: {
-          toggleFinish:function (item) {
-           item.isFinished = !item.isFinished
+    data: function () {
+      return {
+        title: 'this is a todo list',
+        items: [
+          {
+            label: 'coding',
+            isFinished: true
           },
-          addNew: function () {
-            console.log(this.newItem)
-            this.newItem = ''
+          {
+            label: 'walking',
+            isFinished: true
           }
-        }
+
+        ],
+        newItem: ''
+      }
+    },
+    methods: {
+      toggleFinish: function (item) {
+        item.isFinished = !item.isFinished
+      },
+      addNew: function () {
+        console.log(this.newItem)
+        this.newItem = ''
+      }
+    }
   }
 </script>
 
