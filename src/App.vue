@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1 v-text="title"></h1>
-    <input v-model="newItem" v-on:keyup.enter="addNew()">/*v-model监听*/
+    <input v-model="newItem" v-on:keyup.enter="addNew()">
     <ul>
       <li v-for="item in items" v-bind:class="{finished:
       item.isFinished}" v-on:click="toggleFinish(item)">
@@ -32,11 +32,11 @@
       },
         methods: {
           toggleFinish:function (item) {
-            console.log(item)
+           item.isFinished = !item.isFinished
           },
           addNew: function () {
-            console.log(this.newItem)//每次enter都克隆input用v-modal关联的字符
-            this.newItem = '';//每次点击enter都变成空字符串；
+            console.log(this.newItem)
+            this.newItem = ''
           }
         }
   }
