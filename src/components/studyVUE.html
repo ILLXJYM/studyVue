@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>first</title>
+    <script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<div :class="{classA:isOk}">根据条件判断绑定</div>
+<div :class="[classA,classB]">绑定多个class值，数组</div>
+<div :class="isOk?classA : classB" v-on:click="doThis">绑定三元运算符</div>
+<p>
+  <input type="checkbox" id="isOk" v-model="isOk">
+  <label for="isOk">isOk = {{isOk}}</label>
+</p>
+<div :style="{color:red, fontSize:font}">绑定style</div>
+<div :style="styleObject">对象方式绑定style</div>
+<script>
+  var app = new Vue({
+    el : "#app",
+    data : {
+      imgSrc : "./img/dele.jpg",
+      webUrl : "www.baidu.com",
+      className : "a",
+      isOk : true,
+      classA : 'a',
+      classB : 'b',
+      red : 'red',
+      font : '30px',
+      styleObject : { // 将style写成对象写法
+        color : 'orange',
+        fontSize : '40px'
+      }
+    }
+  })
+</script>
+</body>
+</html>
