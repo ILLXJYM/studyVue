@@ -12,22 +12,21 @@
 </template>
 
 <script>
+  import Store from './store'//调用store；
   export default{
     data: function () {
       return {
         title: 'this is a todo list',
-        items: [
-          {
-            label: 'coding',
-            isFinished: true
-          },
-          {
-            label: 'walking',
-            isFinished: true
-          }
-
-        ],
+        items: Store.fetch(),
         newItem: ''
+      }
+    },
+    watch:{
+      items:{
+          handler: function (items ) {
+          Store.save(items)
+      },
+        deep:true
       }
     },
     methods: {
@@ -46,7 +45,11 @@
 </script>
 
 <style>
+  #app{
+    text-align: center;
+    }
   .finished{
     color: aqua;
   }
+  li{list-style: none;}
 </style>
